@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+ service:
+  image: app:latest
+  build: ./
+  ports:
+  - target: 5000
+    published: 5000
+    protocol: tcp
+  environment:
+  - MYSQL_USER=${MYSQL_USER}
+  - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+  - MYSQL_HOST=${MYSQL_HOST}
+  - MYSQL_DB=${MYSQL_DB}
+  - MYSQL_KEY=${MYSQL_KEY}
